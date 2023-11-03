@@ -16,7 +16,7 @@ st.markdown("""
     background-color: lightblue;
 }
 
-.st-emotion-cache-1wivap2.e1i5pmia3 {
+st-emotion-cache-b218v0.e1nzilvr5 {
     text-align: center;
 }
 </style>
