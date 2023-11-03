@@ -11,14 +11,11 @@ st.markdown("""
 .st-emotion-cache-j5r0tf {
     width: calc(20% - 1rem);
     flex: 1 1 calc(20% - 1rem);
-    text-align: center;
+    /* text-align: center; */
     padding: 80px 0;
     background-color: lightblue;
 }
 
-st-emotion-cache-b218v0.e1nzilvr5 {
-    text-align: center;
-}
 </style>
 """, unsafe_allow_html=True)
 
