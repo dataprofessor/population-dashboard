@@ -5,7 +5,20 @@ st.set_page_config(
     page_icon="🏂",
     layout="wide",
     initial_sidebar_state="expanded")
-  
+
+st.markdown("""
+<style>
+.st-emotion-cache-j5r0tf {
+    width: calc(20% - 1rem);
+    flex: 1 1 calc(20% - 1rem);
+    text-align: center;
+    padding: 80px 0;
+    background-color: lightblue;
+}
+</style>
+""", unsafe_allow_html=True)
+
+
 col = st.columns(5)
 
 with col[0]:
