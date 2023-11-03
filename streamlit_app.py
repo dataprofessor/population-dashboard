@@ -30,11 +30,11 @@ st.markdown("""
 }
 */
 
-[data-testid="stMetricDeltaIcon-Up"] {
-  display: block;
-  margin: 0 auto;
+svg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
 }
-
 
 </style>
 """, unsafe_allow_html=True)
