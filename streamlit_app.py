@@ -20,6 +20,7 @@ st.markdown("""
   line-height: 1.5;
   display: inline-block;
   vertical-align: middle;
+  text-align: center;
 }
 
 .st-emotion-cache-1rj1u9t.e1f1d6gn3 {
