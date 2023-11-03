@@ -30,7 +30,11 @@ st.markdown("""
 }
 */
 
-
+.svg.eyeqlp51.st-emotion-cache-jhkj9c.ex0cdmw0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 </style>
 """, unsafe_allow_html=True)
