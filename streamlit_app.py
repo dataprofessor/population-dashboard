@@ -17,7 +17,6 @@ st.markdown("""
 }
 
 div[data-testid="stMetric"] {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
