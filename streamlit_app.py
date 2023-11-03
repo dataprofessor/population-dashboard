@@ -15,6 +15,12 @@ st.markdown("""
     padding: 80px 0;
     background-color: lightblue;
 }
+
+div[data-testid="stMetric"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
 """, unsafe_allow_html=True)
 
