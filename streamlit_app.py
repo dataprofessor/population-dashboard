@@ -16,12 +16,15 @@ st.markdown("""
     background-color: lightblue;
 }
 
-[data-testid="stMetricLabel"], [data-testid="stMetricDeltaIcon-Up"] {
+[data-testid="stMetricLabel"] {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+[data-testid="stMetricDeltaIcon-Up"] {
+    text-align: center;
+}
 
 </style>
 """, unsafe_allow_html=True)
