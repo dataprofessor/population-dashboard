@@ -31,9 +31,8 @@ st.markdown("""
 */
 
 .svg.eyeqlp51.st-emotion-cache-jhkj9c.ex0cdmw0 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 </style>
