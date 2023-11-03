@@ -31,8 +31,8 @@ st.markdown("""
 */
 
 svg {
-  display: block;
-  margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 </style>
