@@ -16,9 +16,7 @@ st.markdown("""
     background-color: lightblue;
 }
 
-[data-testid="stMetricLabel"],
-[data-testid="stMetricValue"],
-[data-testid="stMetricDelta"] {
+[data-testid="stMetricLabel"] {
   /* display: flex; */
   justify-content: center;
   align-items: center;
