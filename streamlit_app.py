@@ -16,6 +16,12 @@ st.markdown("""
     background-color: lightblue;
 }
 
+.st-emotion-cache-j5r0tf p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .st-emotion-cache-1rj1u9t.e1f1d6gn3 {
     text-align: center;
 }
