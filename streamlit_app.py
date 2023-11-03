@@ -19,10 +19,12 @@ st.markdown("""
 [data-testid="stMetricLabel"],
 [data-testid="stMetricValue"],
 [data-testid="stMetricDelta"] {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
 }
+
+
 </style>
 """, unsafe_allow_html=True)
 
