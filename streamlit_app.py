@@ -17,9 +17,7 @@ st.markdown("""
 }
 
 [data-testid="element-container"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
 }
 </style>
 """, unsafe_allow_html=True)
