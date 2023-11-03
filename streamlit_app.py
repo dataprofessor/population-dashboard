@@ -30,11 +30,7 @@ st.markdown("""
 }
 */
 
-svg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto 
-}
+
 
 </style>
 """, unsafe_allow_html=True)
