@@ -22,7 +22,7 @@ st.markdown("""
   align-items: center;
 }
 
-/*
+/*e
 [data-testid="stMetricDeltaIcon-Up"] {
   display: flex;
   justify-content: center;
@@ -31,8 +31,7 @@ st.markdown("""
 */
 
 svg {
-  display: flex;
-  align-items: center
+    margin-right: -50%;
 }
 
 </style>
