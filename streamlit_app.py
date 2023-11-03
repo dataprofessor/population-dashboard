@@ -22,7 +22,15 @@ st.markdown("""
   align-items: center;
 }
 
+/*
 [data-testid="stMetricDeltaIcon-Up"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*/
+ 
+.st-emotion-cache-wnm74r {
   display: flex;
   justify-content: center;
   align-items: center;
