@@ -16,7 +16,7 @@ st.markdown("""
     background-color: lightblue;
 }
 
-.st-emotion-cache-j5r0tf p {
+st-emotion-cache-b218v0.e1nzilvr5 p {
   line-height: 1.5;
   display: inline-block;
   vertical-align: middle;
