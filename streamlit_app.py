@@ -29,12 +29,12 @@ st.markdown("""
   align-items: center;
 }
 */
- 
-.st-emotion-cache-wnm74r {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+[data-testid="stMetricDeltaIcon-Up"] {
+  display: block;
+  margin: 0 auto;
 }
+
 
 </style>
 """, unsafe_allow_html=True)
