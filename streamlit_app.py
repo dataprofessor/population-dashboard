@@ -16,7 +16,7 @@ st.markdown("""
     background-color: lightblue;
 }
 
-.st-emotion-cache-1wmy9hl.e1f1d6gn0 {
+[data-testid="element-container"] {
     display: block;
     margin-left: auto;
     margin-right: auto;
