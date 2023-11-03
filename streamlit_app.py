@@ -16,7 +16,10 @@ st.markdown("""
     background-color: lightblue;
 }
 
-div[data-testid="stMetric"] {
+[data-testid="stMetricLabel"],
+[data-testid="stMetricValue"],
+[data-testid="stMetricDelta"] {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
