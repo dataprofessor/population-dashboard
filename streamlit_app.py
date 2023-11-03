@@ -23,7 +23,9 @@ st.markdown("""
 }
 
 [data-testid="stMetricDeltaIcon-Up"] {
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 </style>
