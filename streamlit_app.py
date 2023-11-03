@@ -1,5 +1,9 @@
 import streamlit as st
 
-st.title('🎈 App Name')
-
-st.write('Hello world!')
+st.set_page_config(
+    page_title="Snowboard",
+    page_icon="🏂",
+    layout="wide",
+    initial_sidebar_state="expanded")
+  
+st.columns(5)
