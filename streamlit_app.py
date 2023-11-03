@@ -17,7 +17,7 @@ st.markdown("""
 }
 
 [data-testid="stMetricLabel"] {
-  /* display: flex; */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
