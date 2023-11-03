@@ -16,7 +16,7 @@ st.markdown("""
     background-color: lightblue;
 }
 
-[data-testid="element-container"] {
+.st-emotion-cache-1rj1u9t.e1f1d6gn3 {
     text-align: center;
 }
 </style>
