@@ -30,7 +30,7 @@ st.markdown("""
 }
 */
 
-.svg.eyeqlp51.st-emotion-cache-jhkj9c.ex0cdmw0 {
+svg {
   display: block;
   margin: 0 auto;
 }
