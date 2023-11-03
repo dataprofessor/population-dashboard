@@ -12,7 +12,7 @@ st.markdown("""
     width: calc(20% - 1rem);
     flex: 1 1 calc(20% - 1rem);
     /* text-align: center; */
-    padding: 80px 20%;
+    padding: 80px 10%;
     background-color: lightblue;
 }
 </style>
