@@ -26,7 +26,8 @@ with col[0]:
 with col[1]:
     st.write('2')
 with col[2]:
-    st.write('3')
+    #st.write('3')
+    st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
 with col[3]:
     st.write('4')
 with col[4]:
