@@ -16,6 +16,9 @@ st.markdown("""
     background-color: lightblue;
 }
 
+.st-emotion-cache-1wmy9hl.e1f1d6gn0 {
+    text-align: center;
+}
 </style>
 """, unsafe_allow_html=True)
 
