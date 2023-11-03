@@ -8,16 +8,14 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-.st-emotion-cache-j5r0tf {
+
+
+[data-testid="stMarkdownContainer"] {
     width: calc(20% - 1rem);
     flex: 1 1 calc(20% - 1rem);
     text-align: center;
     padding: 80px 0;
     background-color: lightblue;
-}
-
-[data-testid="stMarkdownContainer"] {
-    text-align: center;
 }
 </style>
 """, unsafe_allow_html=True)
