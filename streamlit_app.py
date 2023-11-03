@@ -13,8 +13,6 @@ st.markdown("""
     flex: 1 1 calc(20% - 1rem);
     /* text-align: center; */
     padding: 80px 0;
-    margin-left: auto;
-    margin-right: auto;
     background-color: lightblue;
 }
 </style>
