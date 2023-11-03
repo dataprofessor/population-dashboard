@@ -15,6 +15,10 @@ st.markdown("""
     padding: 80px 0;
     background-color: lightblue;
 }
+
+.st-emotion-cache-1wivap2.e1i5pmia3 {
+    text-align: center;
+}
 </style>
 """, unsafe_allow_html=True)
 
