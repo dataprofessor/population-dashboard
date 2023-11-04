@@ -32,7 +32,7 @@ st.markdown("""
 
 
 div svg {
-    display: block; 
+    display: inline-block; 
     margin: auto;
 }
 
