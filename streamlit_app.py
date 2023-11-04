@@ -22,14 +22,12 @@ st.markdown("""
   align-items: center;
 }
 
-/*
+
 [data-testid="stMetricDeltaIcon-Up"] {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-*/
-
 
 div svg {
     display: inline-block; 
