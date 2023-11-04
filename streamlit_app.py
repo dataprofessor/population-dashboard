@@ -24,19 +24,13 @@ st.markdown("""
 
 
 [data-testid="stMetricDeltaIcon-Up"] {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-div svg {
     position: relative;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
 }
+
 
 </style>
 """, unsafe_allow_html=True)
