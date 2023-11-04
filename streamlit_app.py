@@ -50,11 +50,11 @@ with row_1_col[3]:
 with row_1_col[4]:
     st.write('5')
 
-row_2_col = st.columns(3)
+# Row 2
+row_2_col = st.columns(2)
 
 with row_2_col[0]:
     st.write('6')
 with row_2_col[1]:
     st.write('7')
-with row_2_col[2]:
-    st.write('8')
+
