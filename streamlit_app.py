@@ -30,7 +30,8 @@ st.markdown("""
 }
 */
 
-.metric-container {
+
+[data-testid="metric-container"] {
     display: flex;
     justify-content: center;
 }
