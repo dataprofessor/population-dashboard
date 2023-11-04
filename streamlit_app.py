@@ -1,11 +1,13 @@
 import streamlit as st
 
+# Page configuration
 st.set_page_config(
     page_title="Snowboard",
     page_icon="🏂",
     layout="wide",
     initial_sidebar_state="expanded")
 
+# CSS styling
 st.markdown("""
 <style>
 .st-emotion-cache-j5r0tf {
@@ -22,7 +24,6 @@ st.markdown("""
   align-items: center;
 }
 
-
 [data-testid="stMetricDeltaIcon-Up"] {
     position: relative;
     left: 40%;
@@ -31,23 +32,29 @@ st.markdown("""
     transform: translateX(-50%);
 }
 
-
 </style>
 """, unsafe_allow_html=True)
 
+# Row 1
+row_1_col = st.columns(5)
 
-
-
-col = st.columns(5)
-
-with col[0]:
+with row_1_col[0]:
     st.write('1')
-with col[1]:
+with row_1_col[1]:
     st.write('2')
-with col[2]:
+with row_1_col[2]:
     #st.write('3')
     st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
-with col[3]:
+with row_1_col[3]:
     st.write('4')
-with col[4]:
+with row_1_col[4]:
     st.write('5')
+
+row_2_col = st.columns(3)
+
+with row_2_col[0]:
+    st.write('6')
+with row_2_col[1]:
+    st.write('7')
+with row_2_col[2]:
+    st.write('8')
