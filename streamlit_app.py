@@ -35,6 +35,7 @@ div[data-testid="metric-container"] > div p > div svg {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 </style>
