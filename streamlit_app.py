@@ -13,7 +13,7 @@ st.markdown("""
     flex: 1 1 calc(20% - 1rem);
     text-align: center;
     padding: 80px 0;
-    background-color: lightblue;
+    background-color: #2E4053;
 }
 
 [data-testid="stMetricLabel"] {
