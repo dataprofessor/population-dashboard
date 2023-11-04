@@ -33,6 +33,7 @@ st.markdown("""
 
 div svg {
     text-align: center;
+    padding-left: 10px;
 }
 
 </style>
