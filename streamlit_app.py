@@ -31,8 +31,11 @@ st.markdown("""
 }
 
 div svg {
-    display: inline-block; 
-    margin: auto;
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 </style>
