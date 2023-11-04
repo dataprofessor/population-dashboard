@@ -25,7 +25,7 @@ st.markdown("""
 
 [data-testid="stMetricDeltaIcon-Up"] {
     position: relative;
-    left: 50%;
+    left: 40%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
