@@ -31,7 +31,7 @@ st.markdown("""
 */
 
 
-[data-testid="metric-container"] {
+[data-testid="metric-container"] > div p {
     display: flex;
     justify-content: center;
 }
