@@ -31,10 +31,7 @@ st.markdown("""
 */
 
 
-div[data-testid="metric-container"] > div p > div svg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+div svg {
     text-align: center;
 }
 
