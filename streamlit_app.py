@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 # Page configuration
 st.set_page_config(
@@ -34,6 +35,9 @@ st.markdown("""
 
 </style>
 """, unsafe_allow_html=True)
+
+# Load data
+df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/dashboard-v3/master/data/us-population-2010-2019.csv')
 
 # Row 1
 row_1_col = st.columns(5)
