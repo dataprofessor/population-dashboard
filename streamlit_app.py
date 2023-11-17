@@ -150,11 +150,11 @@ with row_1_col[2]:
                  column_config={
                     "states": st.column_config.TextColumn(
                         "States",
-                        width="medium",
+                        width="small",
                     ),
                     "population": st.column_config.ProgressColumn(
                         "Population",
-                        width="large",
+                        width="medium",
                         format="%f",
                         min_value=0,
                         max_value=max(df_selected_year_sorted.population),
