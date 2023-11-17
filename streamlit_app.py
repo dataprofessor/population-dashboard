@@ -24,7 +24,7 @@ alt.themes.enable("dark")
 st.markdown("""
 <style>
 
-[data-testid="element-container"] {
+[data-testid="stMetric"] {
     background-color: #154360;
     text-align: center;
     padding: 25px 0;
