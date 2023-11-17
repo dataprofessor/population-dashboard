@@ -148,14 +148,18 @@ with row_1_col[2]:
                  hide_index=True,
                  width=None,
                  column_config={
-                    "states": st.column_config.TextColumn("States"),
+                    "states": st.column_config.TextColumn(
+                        "States",
+                        width="medium",
+                    ),
                     "population": st.column_config.ProgressColumn(
-                    "Population",
-                    format="%f",
-                    min_value=0,
-                    max_value=max(df_selected_year_sorted.population),
-                 )}
-                )
+                        "Population",
+                        width="large",
+                        format="%f",
+                        min_value=0,
+                        max_value=max(df_selected_year_sorted.population),
+                     )}
+                 )
 
 
 
