@@ -139,6 +139,7 @@ with row_1_col[2]:
                  column_order=("states", "population"),
                  hide_index=True,
                  column_config={
+                    "states": st.column_config.TextColumn("States")
                     "population": st.column_config.ProgressColumn(
                     "Population",
                     format="%f",
