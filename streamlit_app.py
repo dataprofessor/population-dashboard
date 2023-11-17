@@ -122,10 +122,18 @@ def make_donut(input_response, input_text, input_color):
   return plot_bg + plot + text
     
 
+
+# Sidebar
+with sidebar:
+    st.header('U.S. Population Dashboard')
+    year_list = list(df_reshaped.year.unique())
+    selected_year = st.selectbox('Select a year', year_list, index=len(year_list)-1)
+    df_selected_year = df_reshaped[df_reshaped.year == selected_year]
+    df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
+
+
 # Row 1
 row_1_col = st.columns((1,4,1.5))
-
-
 
 with row_1_col[0]:
     st.subheader('Top Gains/Loss')
@@ -140,11 +148,7 @@ with row_1_col[1]:
 
 with row_1_col[2]:
     st.subheader('Top States')
-    year_list = list(df_reshaped.year.unique())
-    selected_year = st.selectbox('Select a year', year_list, index=len(year_list)-1)
-    df_selected_year = df_reshaped[df_reshaped.year == selected_year]
-    df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
-    
+
     st.dataframe(df_selected_year_sorted,
                  column_order=("states", "population"),
                  hide_index=True,
