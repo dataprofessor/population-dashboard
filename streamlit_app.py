@@ -124,7 +124,7 @@ def make_donut(input_response, input_text, input_color):
 
 
 # Sidebar
-with sidebar:
+with st.sidebar:
     st.header('U.S. Population Dashboard')
     year_list = list(df_reshaped.year.unique())
     selected_year = st.selectbox('Select a year', year_list, index=len(year_list)-1)
