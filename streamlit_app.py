@@ -159,7 +159,8 @@ with row_1_col[2]:
                         max_value=max(df_selected_year_sorted.population),
                      )}
                  )
-
+    with st.expander('Data source'):
+        st.write('[State population data (2010-2019)](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html) obtained from the U.S. Census Bureau.')
 
 
 
