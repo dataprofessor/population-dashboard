@@ -55,7 +55,7 @@ df = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
 # Heatmap
 heatmap = alt.Chart(df).mark_rect().encode(
         y=alt.Y('year:O', axis=alt.Axis(title="Year", titleFontSize=16, titlePadding=15, titleFontWeight=900, labelAngle=0)),
-        x=alt.X('states:O', axis=alt.Axis(title="States", titleFontSize=16, titlePadding=15, titleFontWeight=900)),
+        x=alt.X('states:O', axis=alt.Axis(title="", titleFontSize=16, titlePadding=15, titleFontWeight=900)),
         color=alt.Color('max(population):Q',
                          legend=alt.Legend(title=" "),
                          scale=alt.Scale(scheme="blueorange")),
