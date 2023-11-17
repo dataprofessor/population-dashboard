@@ -21,8 +21,13 @@ alt.themes.enable("dark")
 #    background-color: #154360;
 #}
 
+# 6rem 1rem 10rem
 st.markdown("""
 <style>
+
+[data-testid="block-container"] {
+    padding: 3rem 1rem 3rem;
+}
 
 [data-testid="stMetric"] {
     background-color: #154360;
