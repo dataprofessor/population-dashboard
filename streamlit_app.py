@@ -4,7 +4,7 @@ import altair as alt
 
 # Page configuration
 st.set_page_config(
-    page_title="Snowboard",
+    page_title="Population Dashboard",
     page_icon="🏂",
     layout="wide",
     initial_sidebar_state="expanded")
@@ -125,7 +125,7 @@ def make_donut(input_response, input_text, input_color):
 
 # Sidebar
 with st.sidebar:
-    st.header('Population Dashboard')
+    st.title('Population Dashboard')
     year_list = list(df_reshaped.year.unique())
     selected_year = st.selectbox('Select a year', year_list, index=len(year_list)-1)
     df_selected_year = df_reshaped[df_reshaped.year == selected_year]
