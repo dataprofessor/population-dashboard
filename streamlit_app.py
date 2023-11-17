@@ -48,12 +48,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load data
-df = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
+df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
 
 # Plots
 
 # Heatmap
-heatmap = alt.Chart(df).mark_rect().encode(
+heatmap = alt.Chart(df_reshaped).mark_rect().encode(
         y=alt.Y('year:O', axis=alt.Axis(title="Year", titleFontSize=16, titlePadding=15, titleFontWeight=900, labelAngle=0)),
         x=alt.X('states:O', axis=alt.Axis(title="", titleFontSize=16, titlePadding=15, titleFontWeight=900)),
         color=alt.Color('max(population):Q',
