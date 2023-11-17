@@ -26,7 +26,7 @@ st.markdown("""
 <style>
 
 [data-testid="block-container"] {
-    padding: 3rem 2rem 2rem;
+    padding: 3rem 2rem 1rem;
 }
 
 [data-testid="stMetric"] {
