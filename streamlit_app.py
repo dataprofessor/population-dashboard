@@ -141,7 +141,7 @@ with row_1_col[2]:
                  column_config={
                     "population": st.column_config.ProgressColumn(
                     "Population",
-                    format="%i%%",
+                    format="%f",
                     min_value=0,
                     max_value=5000000,
                  )}
