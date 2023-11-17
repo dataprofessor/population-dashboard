@@ -118,7 +118,7 @@ def make_donut(input_response, input_text, input_color):
     
 
 # Row 1
-row_1_col = st.columns((1,4,1))
+row_1_col = st.columns((1,4,2))
 
 with row_1_col[0]:
     st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
