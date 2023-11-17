@@ -137,7 +137,15 @@ with row_1_col[2]:
     
     st.dataframe(df_selected_year_sorted,
                  column_order=("states", "population"),
-                 hide_index=True)
+                 hide_index=True,
+                 column_config={
+                    "population": st.column_config.ProgressColumn(
+                    "Population",
+                    format="%i%%",
+                    min_value=0,
+                    max_value=5000000,
+                 )}
+                )
 
 
 
