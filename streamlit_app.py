@@ -26,6 +26,7 @@ st.markdown("""
 
 [data-testid="element-container"] {
     background-color: #154360;
+    text-align: center;
 }
 
 [data-testid="stMetricLabel"] {
