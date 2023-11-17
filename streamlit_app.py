@@ -37,7 +37,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load data
-df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/dashboard-v3/master/data/us-population-2010-2019.csv')
+df = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
 
 # Row 1
 row_1_col = st.columns(5)
