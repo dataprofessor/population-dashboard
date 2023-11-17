@@ -139,10 +139,10 @@ with row_1_col[2]:
                 "population": st.column_config.ProgressColumn(
                     "Population",
                     format="%i%%",
-                    #min_value=0,
-                    #max_value=max(df_selected_year_sorted),
+                    min_value=0,
+                    max_value=5000000,
                  )}, 
-                 column_order = ("states", "Population"),
+                 column_order = ("states", "population"),
                  hide_index=True
                  )
 
