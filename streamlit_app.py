@@ -134,6 +134,7 @@ with row_1_col[0]:
     st.altair_chart(make_donut(25, 'Text', 'orange'), use_container_width=True)
     
 with row_1_col[1]:
+    st.subheader('Annual Population Growth')
     st.altair_chart(heatmap, use_container_width=True)
 
 with row_1_col[2]:
