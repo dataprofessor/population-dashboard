@@ -13,15 +13,18 @@ alt.themes.enable("dark")
 
 
 # CSS styling
-# .st-emotion-cache-j5r0tf
+# .st-emotion-cache-j5r0tf {
+#    width: calc(20% - 1rem);
+#    flex: 1 1 calc(20% - 1rem);
+#    text-align: center;
+#    padding: 80px 0;
+#    background-color: #154360;
+#}
+
 st.markdown("""
 <style>
 
 [data-testid="element-container"] {
-    width: calc(20% - 1rem);
-    flex: 1 1 calc(20% - 1rem);
-    text-align: center;
-    padding: 80px 0;
     background-color: #154360;
 }
 
