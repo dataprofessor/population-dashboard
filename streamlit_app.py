@@ -128,7 +128,7 @@ row_1_col = st.columns((1,4,1.5))
 
 with row_0_col[2]:
     year_list = list(df_reshaped.year.unique())
-    selected_year = st.selectbox('Select a year', year_list, index=-1)
+    selected_year = st.selectbox('Select a year', year_list, index=len(year_list)
     df_selected_year = df_reshaped[df_reshaped.year == selected_year]
     df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
     
