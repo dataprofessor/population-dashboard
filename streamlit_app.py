@@ -129,9 +129,11 @@ with row_1_col[0]:
 with row_1_col[1]:
     st.altair_chart(heatmap, use_container_width=True)
 
-with row_2_col[2]:
+with row_1_col[2]:
     year_list = list(df_reshaped.year.unique())
-    selected_year = st.selectbox('Select a year', states_list)
+    selected_year = st.selectbox('Select a year', year_list)
+    df_selected_year = df_reshaped[df_reshaped.year == selected_year]
+    
     st.dataframe(df_selected_year.sort_values(by="population", ascending=False) )
 
 # Row 2
