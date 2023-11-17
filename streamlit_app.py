@@ -138,7 +138,7 @@ with row_1_col[2]:
     st.dataframe(df_selected_year_sorted, column_config={
                 "population": st.column_config.ProgressColumn(
                     "Population",
-                    format="%f%%",
+                    format="%i%%",
                     min_value=0,
                     max_value=max(df_selected_year_sorted),
                  )})
