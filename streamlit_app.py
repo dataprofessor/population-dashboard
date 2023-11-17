@@ -1,4 +1,4 @@
-import streamlit as st
+eimport streamlit as st
 import pandas as pd
 import altair as alt
 
@@ -133,8 +133,15 @@ with row_1_col[2]:
     year_list = list(df_reshaped.year.unique())
     selected_year = st.selectbox('Select a year', year_list)
     df_selected_year = df_reshaped[df_reshaped.year == selected_year]
+    df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
     
-    st.dataframe(df_selected_year.sort_values(by="population", ascending=False) )
+    st.dataframe(df_selected_year_sorted,
+                "population": st.column_config.ProgressColumn(
+                    "Population",
+                    format="%f%%",
+                    min_value=0,
+                    max_value=max(df_selected_year_sorted),
+                 ))
 
 # Row 2
 #row_2_col = st.columns(2)
