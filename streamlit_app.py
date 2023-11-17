@@ -141,7 +141,10 @@ with row_1_col[2]:
                     format="%i%%",
                     min_value=0,
                     max_value=max(df_selected_year_sorted),
-                 )})
+                 ), 
+                 column_order = ("states", "Population"),
+                 hide_index=True
+                 })
 
 # Row 2
 #row_2_col = st.columns(2)
