@@ -150,7 +150,6 @@ with row_1_col[2]:
                  column_config={
                     "states": st.column_config.TextColumn(
                         "States",
-                        width="small",
                     ),
                     "population": st.column_config.ProgressColumn(
                         "Population",
