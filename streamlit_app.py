@@ -136,9 +136,8 @@ with row_1_col[2]:
     df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
     
     st.dataframe(df_selected_year_sorted, 
-                 column_order = ("states", "population"),
-                 hide_index=True
-                 )
+                 column_order=("states", "population"),
+                 hide_index=True)
 
 # Row 2
 #row_2_col = st.columns(2)
