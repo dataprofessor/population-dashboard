@@ -143,7 +143,7 @@ with row_1_col[2]:
                     "Population",
                     format="%f",
                     min_value=0,
-                    max_value=5000000,
+                    max_value=df_selected_year_sorted.population.max(),
                  )}
                 )
 
