@@ -123,15 +123,9 @@ def make_donut(input_response, input_text, input_color):
     
 
 # Row 1
-row_0_col = st.columns((1,4,1.5))
 row_1_col = st.columns((1,4,1.5))
 
-with row_0_col[2]:
-    year_list = list(df_reshaped.year.unique())
-    selected_year = st.selectbox('Select a year', year_list, index=len(year_list)-1)
-    df_selected_year = df_reshaped[df_reshaped.year == selected_year]
-    df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
-    
+
 
 with row_1_col[0]:
     st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
@@ -143,6 +137,12 @@ with row_1_col[1]:
     st.altair_chart(heatmap, use_container_width=True)
 
 with row_1_col[2]:
+    st.subheader('Top States')
+    year_list = list(df_reshaped.year.unique())
+    selected_year = st.selectbox('Select a year', year_list, index=len(year_list)-1)
+    df_selected_year = df_reshaped[df_reshaped.year == selected_year]
+    df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
+    
     st.dataframe(df_selected_year_sorted,
                  column_order=("states", "population"),
                  hide_index=True,
