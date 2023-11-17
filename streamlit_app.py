@@ -135,13 +135,13 @@ with row_1_col[2]:
     df_selected_year = df_reshaped[df_reshaped.year == selected_year]
     df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
     
-    st.dataframe(df_selected_year_sorted,
+    st.dataframe(df_selected_year_sorted, column_config={
                 "population": st.column_config.ProgressColumn(
                     "Population",
                     format="%f%%",
                     min_value=0,
                     max_value=max(df_selected_year_sorted),
-                 ))
+                 )})
 
 # Row 2
 #row_2_col = st.columns(2)
