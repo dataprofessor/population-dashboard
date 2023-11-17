@@ -11,10 +11,13 @@ st.set_page_config(
 
 alt.themes.enable("dark")
 
+
 # CSS styling
+# .st-emotion-cache-j5r0tf
 st.markdown("""
 <style>
-.st-emotion-cache-j5r0tf {
+
+[data-testid="element-container"] {
     width: calc(20% - 1rem);
     flex: 1 1 calc(20% - 1rem);
     text-align: center;
