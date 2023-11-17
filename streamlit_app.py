@@ -68,6 +68,7 @@ row_1_col = st.columns((1,4))
 
 with row_1_col[0]:
     st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
+    st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
 with row_1_col[1]:
     st.altair_chart(heatmap, use_container_width=True)
 
