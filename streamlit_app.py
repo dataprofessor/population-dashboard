@@ -120,7 +120,7 @@ with row_1_col[0]:
     st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
     st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
 
-    make_donut_chart(25, 'Text', 'blue')
+    st.altair_chart(make_donut(25, 'Text', 'blue'), use_container_width=True)
     
 with row_1_col[1]:
     st.altair_chart(heatmap, use_container_width=True)
