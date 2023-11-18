@@ -138,7 +138,7 @@ with st.sidebar:
 
 
 # Row 1
-row_1_col = st.columns((1,4,1))
+row_1_col = st.columns((1,4,1.25))
 
 with row_1_col[0]:
     st.subheader('Top Gains/Loss')
