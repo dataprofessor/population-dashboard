@@ -194,6 +194,7 @@ with row_1_col[2]:
             ''')
 
 
+df_selected_year
 
 # Row 2
 #row_2_col = st.columns(2)
