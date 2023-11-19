@@ -151,8 +151,6 @@ def calculate_population_difference(input_df, input_year):
   return pd.concat([selected_year_data.states, selected_year_data.id, selected_year_data.population, selected_year_data.population_difference], axis=1)
 
 
-
-
 # Sidebar
 with st.sidebar:
     st.title('Population Dashboard')
