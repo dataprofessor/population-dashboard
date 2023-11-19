@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+from vega_datasets import data
 
 # Page configuration
 st.set_page_config(
@@ -125,7 +126,23 @@ def make_donut(input_response, input_text, input_color):
                       legend=None),
   )
   return plot_bg + plot + text
-    
+
+
+# Choropleth map
+states = alt.topo_feature(data.us_10m.url, 'states')
+
+choropleth_map = alt.Chart(states).mark_geoshape().encode(
+    color=alt.Color('population:Q', scale=alt.Scale(scheme="blueorange")),   # scale=color_scale
+    stroke=alt.value('#154360')
+).transform_lookup(
+    lookup='id',
+    from_=alt.LookupData(df_selected_year, 'id', list(df_selected_year.columns))
+).properties(
+    width=500,
+    height=300
+).project(
+    type='albersUsa'
+)
 
 
 # Sidebar
@@ -150,6 +167,7 @@ with row_1_col[0]:
 with row_1_col[1]:
     st.subheader('Annual Population Growth')
     st.altair_chart(heatmap, use_container_width=True)
+    st.altair_chart(choropleth_map, use_container_width=True)
 
 with row_1_col[2]:
     st.subheader('Top States')
