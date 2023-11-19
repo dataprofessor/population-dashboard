@@ -133,7 +133,7 @@ def format_number(num):
         if not num % 1000000:
             return f'{num // 1000000} M'
         return f'{round(num / 1000000, 1)} M'
-    return f'€{num // 1000} K'
+    return f'{num // 1000} K'
 
 
 # Sidebar
