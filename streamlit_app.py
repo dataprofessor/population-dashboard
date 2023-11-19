@@ -55,6 +55,14 @@ st.markdown("""
     transform: translateX(-50%);
 }
 
+[data-testid="stMetricDeltaIcon-Down"] {
+    position: relative;
+    left: 40%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
 </style>
 """, unsafe_allow_html=True)
 
