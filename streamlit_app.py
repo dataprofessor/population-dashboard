@@ -202,7 +202,7 @@ with row_1_col[2]:
             ''')
 
 df_selected_year_sorted.states.iloc[0]
-format_number(df_selected_year_sorted.population.iloc[0])
+st.write(format_number(df_selected_year_sorted.population.iloc[0]))
 
 # Row 2
 #row_2_col = st.columns(2)
