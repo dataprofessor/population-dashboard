@@ -167,8 +167,14 @@ row_1_col = st.columns((1,4,1.5))
 
 with row_1_col[0]:
     st.subheader('Top Gains/Loss')
-    st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
-    st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
+
+    first_state_name = df_selected_year_sorted.states.iloc[0]
+    first_state_population = format_number(df_selected_year_sorted.population.iloc[0])
+    st.metric(label=first_state_name, value=first_state_population, delta="1.2 °F")
+
+    last_state_name = df_selected_year_sorted.states.iloc[-1]
+    last_state_population = format_number(df_selected_year_sorted.population.iloc[-1])    
+    st.metric(label=last_state_name, value=last_state_population, delta="1.2 °F")
 
     st.altair_chart(make_donut(25, 'Text', 'orange'), use_container_width=True)
     
@@ -201,8 +207,6 @@ with row_1_col[2]:
             - [State population data (2010-2019)](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html) obtained from the U.S. Census Bureau.
             ''')
 
-df_selected_year_sorted.states.iloc[0]
-st.write(format_number(df_selected_year_sorted.population.iloc[0]))
 
 # Row 2
 #row_2_col = st.columns(2)
