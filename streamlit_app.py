@@ -127,6 +127,14 @@ def make_donut(input_response, input_text, input_color):
   )
   return plot_bg + plot + text
 
+# Convert population to text 
+def format_number(num):
+    if num > 1000000:
+        if not num % 1000000:
+            return f'{num // 1000000}M'
+        return f'{round(num / 1000000, 1)}M'
+    return f'€{num // 1000}K'
+
 
 # Sidebar
 with st.sidebar:
@@ -193,8 +201,8 @@ with row_1_col[2]:
             - [State population data (2010-2019)](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html) obtained from the U.S. Census Bureau.
             ''')
 
-
-df_selected_year_sorted.population.iloc[0]
+df_selected_year_sorted.states.iloc[0]
+format_number(df_selected_year_sorted.population.iloc[0])
 
 # Row 2
 #row_2_col = st.columns(2)
