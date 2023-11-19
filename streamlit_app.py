@@ -128,6 +128,15 @@ def make_donut(input_response, input_text, input_color):
   return plot_bg + plot + text
 
 
+# Sidebar
+with st.sidebar:
+    st.title('Population Dashboard')
+    year_list = list(df_reshaped.year.unique())
+    selected_year = st.selectbox('Select a year', year_list, index=len(year_list)-1)
+    df_selected_year = df_reshaped[df_reshaped.year == selected_year]
+    df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
+
+
 # Choropleth map
 states = alt.topo_feature(data.us_10m.url, 'states')
 
@@ -143,15 +152,6 @@ choropleth_map = alt.Chart(states).mark_geoshape().encode(
 ).project(
     type='albersUsa'
 )
-
-
-# Sidebar
-with st.sidebar:
-    st.title('Population Dashboard')
-    year_list = list(df_reshaped.year.unique())
-    selected_year = st.selectbox('Select a year', year_list, index=len(year_list)-1)
-    df_selected_year = df_reshaped[df_reshaped.year == selected_year]
-    df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
 
 
 # Row 1
