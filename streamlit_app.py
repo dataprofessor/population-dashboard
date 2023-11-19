@@ -183,17 +183,19 @@ with row_1_col[0]:
     #first_state_population = format_number(df_selected_year_sorted.population.iloc[0])
 
     first_state_name = df_population_difference_sorted.states.iloc[0]
-    first_state_population = format_number(df_population_difference_sorted.population.iloc[0])
-    
-    st.metric(label=first_state_name, value=first_state_population, delta="")
+    first_state_population = format_number(df_selected_year_sorted.population.iloc[0])
+    first_state_delta = format_number(df_population_difference_sorted.population.iloc[0])
+
+    st.metric(label=first_state_name, value=first_state_population, delta=first_state_delta)
 
     #last_state_name = df_selected_year_sorted.states.iloc[-1]
     #last_state_population = format_number(df_selected_year_sorted.population.iloc[-1])   
 
     last_state_name = df_population_difference_sorted.states.iloc[-1]
-    last_state_population = format_number(df_population_difference_sorted.population.iloc[-1])   
+    last_state_population = format_number(df_selected_year_sorted.population.iloc[-1])   
+    last_state_delta = format_number(df_population_difference_sorted.population.iloc[-1])   
 
-    st.metric(label=last_state_name, value=last_state_population, delta="")
+    st.metric(label=last_state_name, value=last_state_population, delta=last_state_delta)
 
     st.altair_chart(make_donut(25, 'Text', 'orange'), use_container_width=True)
     
