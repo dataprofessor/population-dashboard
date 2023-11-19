@@ -135,6 +135,15 @@ def format_number(num):
         return f'{round(num / 1000000, 1)} M'
     return f'{num // 1000} K'
 
+# Calculation year-over-year population migrations
+def calculate_population_difference(input_df, input_year):
+  selected_year_data = input_df[input_df['year'] == input_year].reset_index()
+  previous_year_data = input_df[input_df['year'] == input_year - 1].reset_index()
+  population_difference = previous_year_data.population.sub(selected_year_data.population, fill_value=0)
+  return pd.concat([selected_year_data.states, selected_year_data.id, population_difference], axis=1).sort_values(by="population", ascending=False)
+
+
+
 
 # Sidebar
 with st.sidebar:
@@ -166,14 +175,24 @@ choropleth_map = alt.Chart(states).mark_geoshape().encode(
 row_1_col = st.columns((1,4,1.5))
 
 with row_1_col[0]:
-    st.subheader('Top Gains/Loss')
+    st.subheader('Gains/Losses')
 
-    first_state_name = df_selected_year_sorted.states.iloc[0]
-    first_state_population = format_number(df_selected_year_sorted.population.iloc[0])
+    df_population_difference_sorted = calculate_population_difference(df_reshaped, selected_year)
+    
+    #first_state_name = df_selected_year_sorted.states.iloc[0]
+    #first_state_population = format_number(df_selected_year_sorted.population.iloc[0])
+
+    first_state_name = df_population_difference_sorted.states.iloc[0]
+    first_state_population = format_number(df_population_difference_sorted.population.iloc[0])
+    
     st.metric(label=first_state_name, value=first_state_population, delta="")
 
-    last_state_name = df_selected_year_sorted.states.iloc[-1]
-    last_state_population = format_number(df_selected_year_sorted.population.iloc[-1])    
+    #last_state_name = df_selected_year_sorted.states.iloc[-1]
+    #last_state_population = format_number(df_selected_year_sorted.population.iloc[-1])   
+
+    last_state_name = df_population_difference_sorted.states.iloc[-1]
+    last_state_population = format_number(df_population_difference_sorted.population.iloc[-1])   
+
     st.metric(label=last_state_name, value=last_state_population, delta="")
 
     st.altair_chart(make_donut(25, 'Text', 'orange'), use_container_width=True)
