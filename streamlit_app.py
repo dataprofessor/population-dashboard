@@ -62,6 +62,10 @@ st.markdown("""
     transform: translateX(-50%);
 }
 
+[data-testid="stDataFrame"] {
+    height: 500px;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
