@@ -205,7 +205,6 @@ with row_1_col[0]:
     st.metric(label=last_state_name, value=last_state_population, delta=last_state_delta)
 
     st.markdown('#### Migration')
-    st.write('% states with migration > 50,000')
     st.altair_chart(make_donut(25, 'Text', 'orange'), use_container_width=True)
 
 
@@ -235,7 +234,8 @@ with row_1_col[2]:
                         max_value=max(df_selected_year_sorted.population),
                      )}
                  )
-    with st.expander('Data source'):
+    with st.expander('About'):
         st.write('''
             - State population data (2010-2019) obtained from the [U.S. Census Bureau](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html).
+            - **Migration** refers to the percentage of states with annual migration > 50,000
             ''')
