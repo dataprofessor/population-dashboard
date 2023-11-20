@@ -268,6 +268,7 @@ fig.update_layout({
 'template': 'plotly_dark',
 'plot_bgcolor': 'rgba(0, 0, 0, 0)',
 'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+'margin': 'dict(l=20, r=20, t=20, b=20)',
 })
 
 with row_1_col[1]:
