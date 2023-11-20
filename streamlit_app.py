@@ -29,7 +29,10 @@ st.markdown("""
 <style>
 
 [data-testid="block-container"] {
-    padding: 1rem 1rem 0rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
 }
 
 [data-testid="stVerticalBlock"] {
