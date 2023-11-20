@@ -36,6 +36,10 @@ st.markdown("""
     margin-bottom: -4rem;
 }
 
+[data-testid="stVerticalBlock"] {
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
 
 [data-testid="stMetric"] {
     background-color: #393939;
