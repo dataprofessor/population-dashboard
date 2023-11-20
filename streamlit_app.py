@@ -225,14 +225,14 @@ with st.sidebar:
     
 
 # Choropleth map
-choropleth_map = px.choropleth(df_selected_year, locations='states_code', color='population', locationmode="USA-states",
+choropleth = px.choropleth(df_selected_year, locations='states_code', color='population', locationmode="USA-states",
                            color_continuous_scale="Viridis",
                            range_color=(0, max(df_selected_year.population)),
                            scope="usa",
                            labels={'population':'Population'}
                           )
 
-choropleth_map.update_layout(
+choropleth.update_layout(
     template='plotly_dark',
     plot_bgcolor='rgba(0, 0, 0, 0)',
     paper_bgcolor='rgba(0, 0, 0, 0)',
@@ -272,7 +272,7 @@ with row_1_col[0]:
 with row_1_col[1]:
     st.subheader('Annual Population Growth')
     st.altair_chart(heatmap, use_container_width=True)
-    st.plotly_chart(choropleth_map, use_container_width=True)
+    st.plotly_chart(choropleth, use_container_width=True)
 
 
 with row_1_col[2]:
