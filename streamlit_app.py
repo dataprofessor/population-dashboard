@@ -346,3 +346,4 @@ fig.update_layout(
 with row_1_col[1]:
     st.plotly_chart(fig, use_container_width=True)
 
+df_selected_year
