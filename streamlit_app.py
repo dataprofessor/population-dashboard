@@ -130,7 +130,20 @@ states_abbreviation = {
     "U.S. Virgin Islands": "VI",
 }
 
+# Sidebar
+with st.sidebar:
+    st.title('Population Dashboard')
+    
+    year_list = list(df_reshaped.year.unique())
+    
+    selected_year = st.selectbox('Select a year', year_list, index=len(year_list)-1)
+    df_selected_year = df_reshaped[df_reshaped.year == selected_year]
+    df_selected_year['states_code'] = [states_abbreviation[x] for x in df_selected_year.states]
+    df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
 
+    theme_color_list = ['turbo', 'viridis']
+    selected_theme_color = st.selectbox('Select a theme color', theme_color_list)
+    
 
 # Plots
 
@@ -154,6 +167,21 @@ heatmap = alt.Chart(df_reshaped).mark_rect().encode(
     labelFontSize=12,
     titleFontSize=12
     )
+
+# Choropleth map
+choropleth = px.choropleth(df_selected_year, locations='states_code', color='population', locationmode="USA-states",
+                           color_continuous_scale=selected_theme_color,
+                           range_color=(0, max(df_selected_year.population)),
+                           scope="usa",
+                           labels={'population':'Population'}
+                          )
+
+choropleth.update_layout(
+    template='plotly_dark',
+    plot_bgcolor='rgba(0, 0, 0, 0)',
+    paper_bgcolor='rgba(0, 0, 0, 0)',
+    margin=dict(l=0, r=0, t=0, b=0),
+)
 
 # Donut chart
 def make_donut(input_response, input_text, input_color):
@@ -214,33 +242,8 @@ def calculate_population_difference(input_df, input_year):
   return pd.concat([selected_year_data.states, selected_year_data.id, selected_year_data.population, selected_year_data.population_difference], axis=1).sort_values(by="population_difference", ascending=False)
 
 
-# Sidebar
-with st.sidebar:
-    st.title('Population Dashboard')
-    year_list = list(df_reshaped.year.unique())
-    selected_year = st.selectbox('Select a year', year_list, index=len(year_list)-1)
-    df_selected_year = df_reshaped[df_reshaped.year == selected_year]
-    df_selected_year['states_code'] = [states_abbreviation[x] for x in df_selected_year.states]
-    df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
-    
 
-# Choropleth map
-choropleth = px.choropleth(df_selected_year, locations='states_code', color='population', locationmode="USA-states",
-                           color_continuous_scale="turbo",
-                           range_color=(0, max(df_selected_year.population)),
-                           scope="usa",
-                           labels={'population':'Population'}
-                          )
-
-choropleth.update_layout(
-    template='plotly_dark',
-    plot_bgcolor='rgba(0, 0, 0, 0)',
-    paper_bgcolor='rgba(0, 0, 0, 0)',
-    margin=dict(l=0, r=0, t=0, b=0),
-)
-
-
-# Row 1
+# Dashboard Main Panel
 row_1_col = st.columns((1,4,1.5))
 
 with row_1_col[0]:
