@@ -33,7 +33,7 @@ st.markdown("""
     padding-right: 1rem;
     padding-top: 1rem;
     padding-bottom: 0rem;
-    margin-bottom: -2rem;
+    margin-bottom: -3rem;
 }
 
 [data-testid="stVerticalBlock"] {
