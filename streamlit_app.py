@@ -176,6 +176,8 @@ choropleth_map = alt.Chart(states).mark_geoshape().encode(
     type='albersUsa'
 )
 
+st.write(states)
+
 
 # Row 1
 row_1_col = st.columns((1,4,1.5))
@@ -208,7 +210,7 @@ with row_1_col[0]:
 with row_1_col[1]:
     st.subheader('Annual Population Growth')
     st.altair_chart(heatmap, use_container_width=True)
-    st.altair_chart(choropleth_map, use_container_width=True)
+    #st.altair_chart(choropleth_map, use_container_width=True)
 
 with row_1_col[2]:
     st.subheader('Top States')
