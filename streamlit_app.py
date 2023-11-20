@@ -133,7 +133,7 @@ states_abbreviation = {
 
 # Sidebar
 with st.sidebar:
-    st.title('Population Dashboard')
+    st.title('🏂 Dashboard')
     
     year_list = list(df_reshaped.year.unique())
     
