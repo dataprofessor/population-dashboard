@@ -226,7 +226,7 @@ with st.sidebar:
 
 # Choropleth map
 choropleth = px.choropleth(df_selected_year, locations='states_code', color='population', locationmode="USA-states",
-                           color_continuous_scale="Viridis",
+                           color_continuous_scale="turbo",
                            range_color=(0, max(df_selected_year.population)),
                            scope="usa",
                            labels={'population':'Population'}
