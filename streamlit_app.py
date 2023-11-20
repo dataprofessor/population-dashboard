@@ -1,9 +1,13 @@
+#######################
+# Import libraries
+
 import streamlit as st
 import pandas as pd
 import altair as alt
 import plotly.express as px
 from vega_datasets import data
 
+#######################
 # Page configuration
 st.set_page_config(
     page_title="Population Dashboard",
@@ -13,11 +17,8 @@ st.set_page_config(
 
 alt.themes.enable("dark")
 
-
+#######################
 # CSS styling
-
-# 6rem 1rem 10rem
-# background-color: #154360;
 st.markdown("""
 <style>
 
@@ -185,7 +186,7 @@ def calculate_population_difference(input_df, input_year):
 
 #######################
 # Dashboard Main Panel
-row_1_col = st.columns((1,4,1.5))
+row_1_col = st.columns((1, 4, 1.5))
 
 with row_1_col[0]:
     st.markdown('#### Gains/Losses')
@@ -240,3 +241,6 @@ with row_1_col[2]:
             - :orange[**Gains/Losses**] refers to states with high inbound and outbound migration in the selected year
             - :orange[**Migration**] refers to the percentage of states with annual migration > 50,000
             ''')
+
+# Notes
+# 6rem 1rem 10rem
