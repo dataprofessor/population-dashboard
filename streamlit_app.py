@@ -63,7 +63,7 @@ st.markdown("""
 }
 
 [data-testid="stDataFrameResizable"] {
-    height: 500px;
+    height: 600px;
 }
 
 </style>
