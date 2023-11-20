@@ -146,8 +146,8 @@ with st.sidebar:
     df_selected_year['states_code'] = [states_abbreviation[x] for x in df_selected_year.states]
     df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
 
-    theme_color_list = ['turbo', 'blues', 'cividis', 'greens', 'inferno', 'magma', 'plasma', 'reds', 'rainbow', 'viridis']
-    selected_theme_color = st.selectbox('Select a theme color', theme_color_list)
+    color_theme_list = ['turbo', 'blues', 'cividis', 'greens', 'inferno', 'magma', 'plasma', 'reds', 'rainbow', 'viridis']
+    selected_color_theme = st.selectbox('Select a color theme', color_theme_list)
     
 
 # Plots
@@ -158,7 +158,7 @@ heatmap = alt.Chart(df_reshaped).mark_rect().encode(
         x=alt.X('states:O', axis=alt.Axis(title="", titleFontSize=16, titlePadding=15, titleFontWeight=900)),
         color=alt.Color('max(population):Q',
                          legend=alt.Legend(title=" "),
-                         scale=alt.Scale(scheme=selected_theme_color)),
+                         scale=alt.Scale(scheme=selected_color_theme)),
         stroke=alt.value('black'),
         strokeWidth=alt.value(0.25),
         #tooltip=[
@@ -175,7 +175,7 @@ heatmap = alt.Chart(df_reshaped).mark_rect().encode(
 
 # Choropleth map
 choropleth = px.choropleth(df_selected_year, locations='states_code', color='population', locationmode="USA-states",
-                           color_continuous_scale=selected_theme_color,
+                           color_continuous_scale=selected_color_theme,
                            range_color=(0, max(df_selected_year.population)),
                            scope="usa",
                            labels={'population':'Population'}
