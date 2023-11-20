@@ -24,6 +24,7 @@ alt.themes.enable("dark")
 #}
 
 # 6rem 1rem 10rem
+# background-color: #154360;
 st.markdown("""
 <style>
 
@@ -37,7 +38,7 @@ st.markdown("""
 }
 
 [data-testid="stMetric"] {
-    background-color: #154360;
+    background-color: #555555;
     text-align: center;
     padding: 25px 0;
 }
