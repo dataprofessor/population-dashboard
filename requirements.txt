@@ -2,3 +2,4 @@ streamlit
 altair
 pandas
 vega_datasets
+plotly
