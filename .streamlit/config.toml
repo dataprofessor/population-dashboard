@@ -2,7 +2,8 @@
 primaryColor = "#f63366"
 # backgroundColor = "#10344b"
 backgroundColor = "#111111"
-secondaryBackgroundColor = "#154360"
+# secondaryBackgroundColor = "#154360"
+secondaryBackgroundColor = "#393939"
 textColor = "#fafafa"
 font = "sans serif"
 
