@@ -37,8 +37,8 @@ st.markdown("""
 }
 
 [data-testid="stVerticalBlock"] {
-    padding-left: 0rem;
-    padding-right: 0rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 [data-testid="stMetric"] {
