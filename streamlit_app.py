@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+import plotly.express as px
 from vega_datasets import data
 
 # Page configuration
@@ -255,7 +256,7 @@ import pandas as pd
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
                    dtype={"fips": str})
 
-import plotly.express as px
+
 
 fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
                            color_continuous_scale="Viridis",
