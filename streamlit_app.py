@@ -272,7 +272,7 @@ with row_1_col[0]:
 with row_1_col[1]:
     st.subheader('Annual Population Growth')
     st.altair_chart(heatmap, use_container_width=True)
-    st.altair_chart(choropleth_map, use_container_width=True)
+    st.plotly_chart(choropleth_map, use_container_width=True)
 
 
 with row_1_col[2]:
