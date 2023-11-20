@@ -204,7 +204,7 @@ with row_1_col[0]:
 
     st.metric(label=last_state_name, value=last_state_population, delta=last_state_delta)
 
-    st.markdown('#### Migration')
+    st.markdown('#### State Migration')
     st.altair_chart(make_donut(25, 'Text', 'orange'), use_container_width=True)
 
 
