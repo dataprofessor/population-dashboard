@@ -237,5 +237,6 @@ with row_1_col[2]:
     with st.expander('About'):
         st.write('''
             - State population data (2010-2019) obtained from the [U.S. Census Bureau](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html).
-            - **Migration** refers to the percentage of states with annual migration > 50,000
+            - :orange[**Gains/Losses**] refers to states with high inbound and outbound migration in the selected year
+            - :orange[**Migration**] refers to the percentage of states with annual migration > 50,000
             ''')
