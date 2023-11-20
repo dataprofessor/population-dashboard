@@ -182,6 +182,7 @@ def calculate_population_difference(input_df, input_year):
   selected_year_data['population_difference_absolute'] = abs(selected_year_data['population_difference'])
   return pd.concat([selected_year_data.states, selected_year_data.id, selected_year_data.population, selected_year_data.population_difference, selected_year_data.population_difference_absolute], axis=1).sort_values(by="population_difference", ascending=False)
 
+
 #######################
 # Dashboard Main Panel
 row_1_col = st.columns((1,4,1.5))
@@ -191,17 +192,11 @@ with row_1_col[0]:
 
     df_population_difference_sorted = calculate_population_difference(df_reshaped, selected_year)
     
-    #first_state_name = df_selected_year_sorted.states.iloc[0]
-    #first_state_population = format_number(df_selected_year_sorted.population.iloc[0])
-
     first_state_name = df_population_difference_sorted.states.iloc[0]
     first_state_population = format_number(df_population_difference_sorted.population.iloc[0])
     first_state_delta = format_number(df_population_difference_sorted.population_difference.iloc[0])
 
     st.metric(label=first_state_name, value=first_state_population, delta=first_state_delta)
-
-    #last_state_name = df_selected_year_sorted.states.iloc[-1]
-    #last_state_population = format_number(df_selected_year_sorted.population.iloc[-1])   
 
     last_state_name = df_population_difference_sorted.states.iloc[-1]
     last_state_population = format_number(df_population_difference_sorted.population.iloc[-1])   
@@ -244,7 +239,3 @@ with row_1_col[2]:
         st.write('''
             - State population data (2010-2019) obtained from the [U.S. Census Bureau](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html).
             ''')
-
-
-
-
