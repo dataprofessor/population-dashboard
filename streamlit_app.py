@@ -62,7 +62,7 @@ st.markdown("""
     transform: translateX(-50%);
 }
 
-[data-testid="stDataFrame"] {
+[data-testid="stDataFrameResizable"] {
     height: 500px;
 }
 
