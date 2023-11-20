@@ -205,7 +205,7 @@ with row_1_col[0]:
 
     st.metric(label=last_state_name, value=last_state_population, delta=last_state_delta)
 
-    st.markdown('#### State Migration')
+    st.markdown('#### States Migration')
     # Filter states with population difference > 50000
     df_greater_50000 = df_population_difference_sorted[df_population_difference_sorted.population_difference_absolute > 50000]
     # % of States with population difference > 50000
