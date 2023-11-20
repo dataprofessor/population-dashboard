@@ -248,7 +248,7 @@ def calculate_population_difference(input_df, input_year):
 row_1_col = st.columns((1,4,1.5))
 
 with row_1_col[0]:
-    st.subheader('Gains/Losses')
+    st.markdown('### Gains/Losses')
 
     df_population_difference_sorted = calculate_population_difference(df_reshaped, selected_year)
     
@@ -274,13 +274,14 @@ with row_1_col[0]:
 
 
 with row_1_col[1]:
-    st.subheader('Annual Population Growth')
+    st.markdown('### Annual Population Growth')
+    
     st.altair_chart(heatmap, use_container_width=True)
     st.plotly_chart(choropleth, use_container_width=True)
 
 
 with row_1_col[2]:
-    st.subheader('Top States')
+    st.markdown('### Top States')
 
     st.dataframe(df_selected_year_sorted,
                  column_order=("states", "population"),
