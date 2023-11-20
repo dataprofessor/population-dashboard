@@ -329,7 +329,7 @@ df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-
 
 fig = px.choropleth(df_selected_year, locations='states_code', color='population', locationmode="USA-states",
                            color_continuous_scale="Viridis",
-                           range_color=(0, 12),
+                           range_color=(0, max(df_selected_year.population)),
                            scope="usa",
                            labels={'population':'Population'}
                           )
