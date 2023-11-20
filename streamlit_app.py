@@ -305,7 +305,7 @@ with row_1_col[2]:
                  )
     with st.expander('Data source'):
         st.write('''
-            - [State population data (2010-2019)](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html) obtained from the U.S. Census Bureau.
+            - State population data (2010-2019) obtained from the [U.S. Census Bureau](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html).
             ''')
 
 
