@@ -62,9 +62,6 @@ st.markdown("""
     transform: translateX(-50%);
 }
 
-.dvn-scroller glideDataEditor, [data-testid="stDataFrameResizable"], [data-testid="stDataFrame"] {
-    height: 600px;
-}
 
 </style>
 """, unsafe_allow_html=True)
