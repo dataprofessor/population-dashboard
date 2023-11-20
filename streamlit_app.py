@@ -269,6 +269,6 @@ fig.update_layout({
 'paper_bgcolor': 'rgba(0, 0, 0, 0)',
 })
 
-with row_1_col[0]:
+with row_1_col[1]:
     st.plotly_chart(fig)
 
