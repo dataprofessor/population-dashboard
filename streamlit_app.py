@@ -264,12 +264,12 @@ fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
                            labels={'unemp':'unemployment rate'}
                           )
 # fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-fig.update_layout({
-'template': 'plotly_dark',
-'plot_bgcolor': 'rgba(0, 0, 0, 0)',
-'paper_bgcolor': 'rgba(0, 0, 0, 0)',
-'margin': 'dict(l=20, r=20, t=20, b=20)',
-})
+fig.update_layout(
+    template='plotly_dark',
+    plot_bgcolor=rgba(0, 0, 0, 0),
+    paper_bgcolor=rgba(0, 0, 0, 0),
+    margin=dict(l=20, r=20, t=20, b=20),
+)
 
 with row_1_col[1]:
     st.plotly_chart(fig, use_container_width=True)
