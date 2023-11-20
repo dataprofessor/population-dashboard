@@ -153,7 +153,7 @@ heatmap = alt.Chart(df_reshaped).mark_rect().encode(
         x=alt.X('states:O', axis=alt.Axis(title="", titleFontSize=16, titlePadding=15, titleFontWeight=900)),
         color=alt.Color('max(population):Q',
                          legend=alt.Legend(title=" "),
-                         scale=alt.Scale(scheme="viridis")),
+                         scale=alt.Scale(scheme=selected_theme_color)),
         stroke=alt.value('black'),
         strokeWidth=alt.value(0.25),
         #tooltip=[
