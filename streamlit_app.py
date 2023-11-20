@@ -265,6 +265,7 @@ fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
                           )
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 fig.update_layout({
+'template': 'plotly_dark',
 'plot_bgcolor': 'rgba(0, 0, 0, 0)',
 'paper_bgcolor': 'rgba(0, 0, 0, 0)',
 })
