@@ -192,17 +192,27 @@ with row_1_col[0]:
     st.markdown('#### Gains/Losses')
 
     df_population_difference_sorted = calculate_population_difference(df_reshaped, selected_year)
-    
-    first_state_name = df_population_difference_sorted.states.iloc[0]
-    first_state_population = format_number(df_population_difference_sorted.population.iloc[0])
-    first_state_delta = format_number(df_population_difference_sorted.population_difference.iloc[0])
+
+    if selected_year > 2010:
+        first_state_name = df_population_difference_sorted.states.iloc[0]
+        first_state_population = format_number(df_population_difference_sorted.population.iloc[0])
+        first_state_delta = format_number(df_population_difference_sorted.population_difference.iloc[0])
+    else:
+        first_state_name = '-'
+        first_state_population = '-'
+        first_state_delta = ''
 
     st.metric(label=first_state_name, value=first_state_population, delta=first_state_delta)
 
-    last_state_name = df_population_difference_sorted.states.iloc[-1]
-    last_state_population = format_number(df_population_difference_sorted.population.iloc[-1])   
-    last_state_delta = format_number(df_population_difference_sorted.population_difference.iloc[-1])   
-
+    if selected_year > 2010:
+        last_state_name = df_population_difference_sorted.states.iloc[-1]
+        last_state_population = format_number(df_population_difference_sorted.population.iloc[-1])   
+        last_state_delta = format_number(df_population_difference_sorted.population_difference.iloc[-1])   
+    else:
+        last_state_name = '-'
+        last_state_population = '-'
+        last_state_delta = ''
+    
     st.metric(label=last_state_name, value=last_state_population, delta=last_state_delta)
 
     st.markdown('#### States Migration')
