@@ -182,7 +182,7 @@ def calculate_population_difference(input_df, input_year):
   selected_year_data['population_difference_absolute'] = abs(selected_year_data['population_difference'])
   return pd.concat([selected_year_data.states, selected_year_data.id, selected_year_data.population, selected_year_data.population_difference, selected_year_data.population_difference_absolute], axis=1).sort_values(by="population_difference", ascending=False)
 
-
+#######################
 # Dashboard Main Panel
 row_1_col = st.columns((1,4,1.5))
 
