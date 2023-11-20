@@ -258,12 +258,21 @@ df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-
 
 st.write(df)
 
-fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
+#fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
+#                           color_continuous_scale="Viridis",
+#                           range_color=(0, 12),
+#                           scope="usa",
+#                           labels={'unemp':'unemployment rate'}
+#                          )
+
+fig = px.choropleth(df_selected_year, geojson=df_selected_year, locations='id', color='population',
                            color_continuous_scale="Viridis",
                            range_color=(0, 12),
                            scope="usa",
-                           labels={'unemp':'unemployment rate'}
+                           labels={'population':'Population'}
                           )
+
+
 # fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 fig.update_layout(
     template='plotly_dark',
