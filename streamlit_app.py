@@ -256,8 +256,6 @@ import pandas as pd
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
                    dtype={"fips": str})
 
-st.write(df)
-
 #fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
 #                           color_continuous_scale="Viridis",
 #                           range_color=(0, 12),
@@ -265,7 +263,7 @@ st.write(df)
 #                           labels={'unemp':'unemployment rate'}
 #                          )
 
-fig = px.choropleth(df_selected_year, geojson=df_selected_year, locations='id', color='population',
+fig = px.choropleth(df_selected_year, locations='id', color='population',
                            color_continuous_scale="Viridis",
                            range_color=(0, 12),
                            scope="usa",
