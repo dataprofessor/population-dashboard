@@ -327,7 +327,7 @@ df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-
 #                           labels={'unemp':'unemployment rate'}
 #                          )
 
-fig = px.choropleth(df_selected_year, locations=df_selected_year.states_code, color=df_selected_year.population,
+fig = px.choropleth(df_selected_year, locations='states_code', color='population',
                            color_continuous_scale="Viridis",
                            range_color=(0, 12),
                            scope="usa",
