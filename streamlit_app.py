@@ -122,12 +122,7 @@ choropleth.update_layout(
     plot_bgcolor='rgba(0, 0, 0, 0)',
     paper_bgcolor='rgba(0, 0, 0, 0)',
     margin=dict(l=0, r=0, t=0, b=0),
-    height=350,
-    legend=dict(
-        title_font_family='Courier New',
-        font=dict(
-        size=16
-    ))
+    height=350
 )
 
 # Donut chart
