@@ -90,8 +90,8 @@ with st.sidebar:
 
 # Heatmap
 heatmap = alt.Chart(df_reshaped).mark_rect().encode(
-        y=alt.Y('year:O', axis=alt.Axis(title="Year", titleFontSize=16, titlePadding=15, titleFontWeight=900, labelAngle=0)),
-        x=alt.X('states:O', axis=alt.Axis(title="", titleFontSize=16, titlePadding=15, titleFontWeight=900)),
+        y=alt.Y('year:O', axis=alt.Axis(title="Year", titleFontSize=18, titlePadding=15, titleFontWeight=900, labelAngle=0)),
+        x=alt.X('states:O', axis=alt.Axis(title="", titleFontSize=18, titlePadding=15, titleFontWeight=900)),
         color=alt.Color('max(population):Q',
                          legend=alt.Legend(title=" "),
                          scale=alt.Scale(scheme=selected_color_theme)),
