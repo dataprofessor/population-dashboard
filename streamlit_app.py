@@ -10,7 +10,7 @@ from vega_datasets import data
 #######################
 # Page configuration
 st.set_page_config(
-    page_title="Population Dashboard",
+    page_title="US Population Dashboard",
     page_icon="🏂",
     layout="wide",
     initial_sidebar_state="expanded")
@@ -73,7 +73,7 @@ df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
 
 # Sidebar
 with st.sidebar:
-    st.title('🏂 Population Dashboard')
+    st.title('🏂 US Population Dashboard')
     
     year_list = list(df_reshaped.year.unique())
     
