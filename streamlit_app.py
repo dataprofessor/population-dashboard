@@ -73,7 +73,7 @@ df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
 
 # Sidebar
 with st.sidebar:
-    st.title('🏂 Dashboard')
+    st.title('🏂 Population Dashboard')
     
     year_list = list(df_reshaped.year.unique())
     
