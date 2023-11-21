@@ -222,7 +222,7 @@ with row_1_col[0]:
     # % of States with population difference > 50000
     states_migration = int((len(df_greater_50000)/df_population_difference_sorted.states.nunique())*100)
 
-    st.altair_chart(make_donut(states_migration, 'States Migration', 'orange'), use_container_width=True)
+    st.altair_chart(make_donut(states_migration, 'States Migration', 'orange'))
 
 
 with row_1_col[1]:
