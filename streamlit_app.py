@@ -82,7 +82,7 @@ with st.sidebar:
     # df_selected_year['states_code'] = [states_abbreviation[x] for x in df_selected_year.states]
     df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
 
-    color_theme_list = ['turbo', 'blues', 'cividis', 'greens', 'inferno', 'magma', 'plasma', 'reds', 'rainbow', 'viridis']
+    color_theme_list = ['blues', 'cividis', 'greens', 'inferno', 'magma', 'plasma', 'reds', 'rainbow', 'turbo', 'viridis']
     selected_color_theme = st.selectbox('Select a color theme', color_theme_list)
     
 
