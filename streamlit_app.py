@@ -126,7 +126,7 @@ choropleth.update_layout(
     legend=dict(
         title_font_family='Courier New',
         font=dict(
-        size=10
+        size=12
     ))
 )
 
