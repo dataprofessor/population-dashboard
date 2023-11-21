@@ -187,7 +187,7 @@ def calculate_population_difference(input_df, input_year):
 
 #######################
 # Dashboard Main Panel
-row_1_col = st.columns((1, 4, 1.5))
+row_1_col = st.columns((1, 4, 2))
 
 with row_1_col[0]:
     st.markdown('#### Gains/Losses')
@@ -245,7 +245,7 @@ with row_1_col[2]:
                     ),
                     "population": st.column_config.ProgressColumn(
                         "Population",
-                        width="small",
+                        width="medium",
                         format="%f",
                         min_value=0,
                         max_value=max(df_selected_year_sorted.population),
