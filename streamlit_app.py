@@ -101,7 +101,7 @@ heatmap = alt.Chart(df_reshaped).mark_rect().encode(
         #    alt.Tooltip('year:O', title='Year'),
         #    alt.Tooltip('population:Q', title='Population')
         #]
-    ).properties(height=320
+    ).properties(height=350
     #).configure_legend(orient='bottom', titleFontSize=16, labelFontSize=14, titlePadding=0
     #).configure_axisX(labelFontSize=14)
     ).configure_axis(
