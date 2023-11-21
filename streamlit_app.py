@@ -228,7 +228,7 @@ with row_1_col[0]:
 with row_1_col[1]:
     st.plotly_chart(choropleth, use_container_width=True)
     
-    st.markdown('#### Annual Population Growth')
+    st.markdown('#### Total Population')
     st.altair_chart(heatmap, use_container_width=True)
     
 
