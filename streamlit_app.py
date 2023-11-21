@@ -105,8 +105,8 @@ heatmap = alt.Chart(df_reshaped).mark_rect().encode(
     #).configure_legend(orient='bottom', titleFontSize=16, labelFontSize=14, titlePadding=0
     #).configure_axisX(labelFontSize=14)
     ).configure_axis(
-    labelFontSize=16,
-    titleFontSize=16
+    labelFontSize=14,
+    titleFontSize=14
     )
 
 # Choropleth map
