@@ -202,7 +202,6 @@ with row_1_col[0]:
         first_state_name = '-'
         first_state_population = '-'
         first_state_delta = ''
-
     st.metric(label=first_state_name, value=first_state_population, delta=first_state_delta)
 
     if selected_year > 2010:
@@ -213,15 +212,14 @@ with row_1_col[0]:
         last_state_name = '-'
         last_state_population = '-'
         last_state_delta = ''
-    
     st.metric(label=last_state_name, value=last_state_population, delta=last_state_delta)
 
+    
     st.markdown('#### States Migration')
     # Filter states with population difference > 50000
     df_greater_50000 = df_population_difference_sorted[df_population_difference_sorted.population_difference_absolute > 50000]
     # % of States with population difference > 50000
     states_migration = int((len(df_greater_50000)/df_population_difference_sorted.states.nunique())*100)
-
     st.altair_chart(make_donut(states_migration, 'States Migration', 'orange'))
 
 
@@ -251,12 +249,10 @@ with row_1_col[2]:
                         max_value=max(df_selected_year_sorted.population),
                      )}
                  )
+    
     with st.expander('About'):
         st.write('''
             - Data obtained from the [U.S. Census Bureau](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html).
             - :orange[**Gains/Losses**] refers to states with high inbound and outbound migration in the selected year
             - :orange[**States Migration**] refers to the percentage of states with annual migration > 50,000
             ''')
-
-# Notes
-# 6rem 1rem 10rem
