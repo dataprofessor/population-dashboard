@@ -105,13 +105,14 @@ def make_heatmap(input_df, input_x, input_y, input_color, input_color_theme):
             #    alt.Tooltip('year:O', title='Year'),
             #    alt.Tooltip('population:Q', title='Population')
             #]
-        ).properties(height=300
+        ).properties(width=900
         #).configure_legend(orient='bottom', titleFontSize=16, labelFontSize=14, titlePadding=0
         #).configure_axisX(labelFontSize=14)
         ).configure_axis(
         labelFontSize=12,
         titleFontSize=12
-        )
+        ) 
+    # height=300
     return heatmap
 
 # Choropleth map
