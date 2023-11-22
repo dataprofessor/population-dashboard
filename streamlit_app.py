@@ -94,7 +94,7 @@ with st.sidebar:
 def make_heatmap(input_df, input_y, input_x, input_color, input_color_theme):
     heatmap = alt.Chart(input_df).mark_rect().encode(
             y=alt.Y(f'{input_y}:O', axis=alt.Axis(title="Year", titleFontSize=18, titlePadding=15, titleFontWeight=900, labelAngle=0)),
-            x=alt.X(f'{input_x}:O', axis=alt.Axis(title="", titleFontSize=18, titlePadding=15, titleFontWeight=900, tickCount=52,labelOverlap=false)),
+            x=alt.X(f'{input_x}:O', axis=alt.Axis(title="", titleFontSize=18, titlePadding=15, titleFontWeight=900)),
             color=alt.Color(f'max({input_color}):Q',
                              legend=None,
                              scale=alt.Scale(scheme=input_color_theme)),
