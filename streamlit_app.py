@@ -49,7 +49,7 @@ st.markdown("""
 
 [data-testid="stMetricDeltaIcon-Up"] {
     position: relative;
-    left: 40%;
+    left: 38%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -57,7 +57,7 @@ st.markdown("""
 
 [data-testid="stMetricDeltaIcon-Down"] {
     position: relative;
-    left: 40%;
+    left: 38%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
