@@ -63,14 +63,16 @@ st.markdown("""
     transform: translateX(-50%);
 }
 
-
 </style>
 """, unsafe_allow_html=True)
 
+
+#######################
 # Load data
 df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
 
 
+#######################
 # Sidebar
 with st.sidebar:
     st.title('🏂 US Population Dashboard')
@@ -84,7 +86,8 @@ with st.sidebar:
 
     color_theme_list = ['blues', 'cividis', 'greens', 'inferno', 'magma', 'plasma', 'reds', 'rainbow', 'turbo', 'viridis']
     selected_color_theme = st.selectbox('Select a color theme', color_theme_list)
-    
+
+
 #######################
 # Plots
 
