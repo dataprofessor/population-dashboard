@@ -92,30 +92,32 @@ with st.sidebar:
 # Plots
 
 # Heatmap
-heatmap = alt.Chart(df_reshaped).mark_rect().encode(
-        y=alt.Y('year:O', axis=alt.Axis(title="Year", titleFontSize=18, titlePadding=15, titleFontWeight=900, labelAngle=0)),
-        x=alt.X('states:O', axis=alt.Axis(title="", titleFontSize=18, titlePadding=15, titleFontWeight=900)),
-        color=alt.Color('max(population):Q',
-                         legend=alt.Legend(title=" "),
-                         scale=alt.Scale(scheme=selected_color_theme)),
-        stroke=alt.value('black'),
-        strokeWidth=alt.value(0.25),
-        #tooltip=[
-        #    alt.Tooltip('year:O', title='Year'),
-        #    alt.Tooltip('population:Q', title='Population')
-        #]
-    ).properties(height=300
-    #).configure_legend(orient='bottom', titleFontSize=16, labelFontSize=14, titlePadding=0
-    #).configure_axisX(labelFontSize=14)
-    ).configure_axis(
-    labelFontSize=12,
-    titleFontSize=12
-    )
+def make_heatmap():
+    heatmap = alt.Chart(df_reshaped).mark_rect().encode(
+            y=alt.Y('year:O', axis=alt.Axis(title="Year", titleFontSize=18, titlePadding=15, titleFontWeight=900, labelAngle=0)),
+            x=alt.X('states:O', axis=alt.Axis(title="", titleFontSize=18, titlePadding=15, titleFontWeight=900)),
+            color=alt.Color('max(population):Q',
+                             legend=alt.Legend(title=" "),
+                             scale=alt.Scale(scheme=selected_color_theme)),
+            stroke=alt.value('black'),
+            strokeWidth=alt.value(0.25),
+            #tooltip=[
+            #    alt.Tooltip('year:O', title='Year'),
+            #    alt.Tooltip('population:Q', title='Population')
+            #]
+        ).properties(height=300
+        #).configure_legend(orient='bottom', titleFontSize=16, labelFontSize=14, titlePadding=0
+        #).configure_axisX(labelFontSize=14)
+        ).configure_axis(
+        labelFontSize=12,
+        titleFontSize=12
+        )
+    return heatmap
 
 # Choropleth map
-def make_choropleth():
-    choropleth = px.choropleth(df_selected_year, locations='states_code', color='population', locationmode="USA-states",
-                               color_continuous_scale=selected_color_theme,
+def make_choropleth(input_df, input_id, input_column, input_color_theme):
+    choropleth = px.choropleth(input_df, locations=input_id, color=input_column, locationmode="USA-states",
+                               color_continuous_scale=input_color_theme,
                                range_color=(0, max(df_selected_year.population)),
                                scope="usa",
                                labels={'population':'Population'}
@@ -128,6 +130,7 @@ def make_choropleth():
         height=350
     )
     return choropleth
+
 
 # Donut chart
 def make_donut(input_response, input_text, input_color):
@@ -224,13 +227,16 @@ with row_1_col[0]:
     df_greater_50000 = df_population_difference_sorted[df_population_difference_sorted.population_difference_absolute > 50000]
     # % of States with population difference > 50000
     states_migration = int((len(df_greater_50000)/df_population_difference_sorted.states.nunique())*100)
-    st.altair_chart(make_donut(states_migration, 'States Migration', 'orange'))
+    donut_chart = make_donut(states_migration, 'States Migration', 'orange')
+    st.altair_chart(donut_chart)
 
 
 with row_1_col[1]:
-    st.plotly_chart(make_choropleth(), use_container_width=True)
+    choropleth = make_choropleth(df_selected_year, 'states_code', 'population', selected_color_theme)
+    st.plotly_chart(choropleth, use_container_width=True)
     
     st.markdown('#### Total Population')
+    heatmap = make_heatmap()
     st.altair_chart(heatmap, use_container_width=True)
     
 
