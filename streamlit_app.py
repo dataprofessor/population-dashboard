@@ -96,13 +96,11 @@ def make_heatmap(input_df, input_y, input_x, input_color, input_color_theme):
             y=alt.Y(f'{input_y}:O', axis=alt.Axis(title="Year", titleFontSize=18, titlePadding=15, titleFontWeight=900, labelAngle=0)),
             x=alt.X(f'{input_x}:O', axis=alt.Axis(title="", titleFontSize=18, titlePadding=15, titleFontWeight=900)),
             color=alt.Color(f'max({input_color}):Q',
-                             legend=alt.Legend(title=" "),
+                             legend=None,
                              scale=alt.Scale(scheme=input_color_theme)),
             stroke=alt.value('black'),
             strokeWidth=alt.value(0.25),
         ).properties(width=900
-        ).configure_legend(title=null
-        #).configure_axisX(labelFontSize=14)
         ).configure_axis(
         labelFontSize=12,
         titleFontSize=12
