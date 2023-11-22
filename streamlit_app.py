@@ -226,10 +226,11 @@ with row_1_col[0]:
 
 
 with row_1_col[1]:
+    st.markdown('#### Total Population')
+    
     choropleth = make_choropleth(df_selected_year, 'states_code', 'population', selected_color_theme)
     st.plotly_chart(choropleth, use_container_width=True)
     
-    st.markdown('#### Total Population')
     heatmap = make_heatmap(df_reshaped, 'year', 'states', 'population', selected_color_theme)
     st.altair_chart(heatmap, use_container_width=True)
     
