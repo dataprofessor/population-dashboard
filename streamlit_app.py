@@ -23,8 +23,8 @@ st.markdown("""
 <style>
 
 [data-testid="block-container"] {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-top: 1rem;
     padding-bottom: 0rem;
     margin-bottom: -7rem;
@@ -81,7 +81,6 @@ with st.sidebar:
     
     selected_year = st.selectbox('Select a year', year_list, index=len(year_list)-1)
     df_selected_year = df_reshaped[df_reshaped.year == selected_year]
-    # df_selected_year['states_code'] = [states_abbreviation[x] for x in df_selected_year.states]
     df_selected_year_sorted = df_selected_year.sort_values(by="population", ascending=False)
 
     color_theme_list = ['blues', 'cividis', 'greens', 'inferno', 'magma', 'plasma', 'reds', 'rainbow', 'turbo', 'viridis']
