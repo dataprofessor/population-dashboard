@@ -113,20 +113,21 @@ heatmap = alt.Chart(df_reshaped).mark_rect().encode(
     )
 
 # Choropleth map
-choropleth = px.choropleth(df_selected_year, locations='states_code', color='population', locationmode="USA-states",
-                           color_continuous_scale=selected_color_theme,
-                           range_color=(0, max(df_selected_year.population)),
-                           scope="usa",
-                           labels={'population':'Population'}
-                          )
-
-choropleth.update_layout(
-    template='plotly_dark',
-    plot_bgcolor='rgba(0, 0, 0, 0)',
-    paper_bgcolor='rgba(0, 0, 0, 0)',
-    margin=dict(l=0, r=0, t=0, b=0),
-    height=350
-)
+def make_choropleth():
+    choropleth = px.choropleth(df_selected_year, locations='states_code', color='population', locationmode="USA-states",
+                               color_continuous_scale=selected_color_theme,
+                               range_color=(0, max(df_selected_year.population)),
+                               scope="usa",
+                               labels={'population':'Population'}
+                              )
+    choropleth.update_layout(
+        template='plotly_dark',
+        plot_bgcolor='rgba(0, 0, 0, 0)',
+        paper_bgcolor='rgba(0, 0, 0, 0)',
+        margin=dict(l=0, r=0, t=0, b=0),
+        height=350
+    )
+    return choropleth
 
 # Donut chart
 def make_donut(input_response, input_text, input_color):
@@ -227,7 +228,7 @@ with row_1_col[0]:
 
 
 with row_1_col[1]:
-    st.plotly_chart(choropleth, use_container_width=True)
+    st.plotly_chart(make_choropleth(), use_container_width=True)
     
     st.markdown('#### Total Population')
     st.altair_chart(heatmap, use_container_width=True)
