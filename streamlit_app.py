@@ -101,7 +101,7 @@ def make_heatmap(input_df, input_y, input_x, input_color, input_color_theme):
             stroke=alt.value('black'),
             strokeWidth=alt.value(0.25),
         ).properties(width=900
-        ).configure_legend('Population', orient='bottom', titleFontSize=16, labelFontSize=14, titlePadding=0
+        ).configure_legend(orient='bottom', titleFontSize=16, labelFontSize=14, titlePadding=0
         #).configure_axisX(labelFontSize=14)
         ).configure_axis(
         labelFontSize=12,
