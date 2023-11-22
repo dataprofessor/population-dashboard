@@ -188,7 +188,7 @@ def calculate_population_difference(input_df, input_year):
 
 #######################
 # Dashboard Main Panel
-row_1_col = st.columns((1, 5, 2.5))
+row_1_col = st.columns((1, 5, 2))
 
 with row_1_col[0]:
     st.markdown('#### Gains/Losses')
