@@ -1,5 +1,5 @@
 streamlit
-altair
 pandas
-vega_datasets
+altair
 plotly
+vega_datasets
