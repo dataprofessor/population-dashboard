@@ -258,5 +258,5 @@ with row_1_col[2]:
         st.write('''
             - Data obtained from the [U.S. Census Bureau](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html).
             - :orange[**Gains/Losses**] refers to states with high inbound and outbound migration in the selected year
-            - :orange[**States Migration**] refers to the percentage of states with annual migration > 50,000
+            - :orange[**States Migration**] refers to the percentage of states with annual inbound or outbound migration > 50,000
             ''')
