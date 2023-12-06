@@ -186,9 +186,9 @@ def calculate_population_difference(input_df, input_year):
 
 #######################
 # Dashboard Main Panel
-row_1_col = st.columns((1, 5, 2))
+col = st.columns((1, 5, 2))
 
-with row_1_col[0]:
+with col[0]:
     st.markdown('#### Gains/Losses')
 
     df_population_difference_sorted = calculate_population_difference(df_reshaped, selected_year)
@@ -223,7 +223,7 @@ with row_1_col[0]:
     st.altair_chart(donut_chart)
 
 
-with row_1_col[1]:
+with col[1]:
     st.markdown('#### Total Population')
     
     choropleth = make_choropleth(df_selected_year, 'states_code', 'population', selected_color_theme)
@@ -233,7 +233,7 @@ with row_1_col[1]:
     st.altair_chart(heatmap, use_container_width=True)
     
 
-with row_1_col[2]:
+with col[2]:
     st.markdown('#### Top States')
 
     st.dataframe(df_selected_year_sorted,
