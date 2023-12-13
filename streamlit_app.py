@@ -155,7 +155,7 @@ def make_donut(input_response, input_text, input_color):
                       legend=None),
   ).properties(width=140, height=150)
     
-  text = plot.mark_text(align='center', color="#29b5e8", font="Lato", fontSize=38, fontWeight=700, fontStyle="italic").encode(text=alt.value(f'{input_response} %'))
+  text = plot.mark_text(align='center', color="#29b5e8", font="Lato", fontSize=34, fontWeight=700, fontStyle="italic").encode(text=alt.value(f'{input_response} %'))
   plot_bg = alt.Chart(source_bg).mark_arc(innerRadius=60, cornerRadius=20).encode(
       theta="% value",
       color= alt.Color("Topic:N",
