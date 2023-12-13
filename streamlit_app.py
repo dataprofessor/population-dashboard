@@ -153,7 +153,7 @@ def make_donut(input_response, input_text, input_color):
                           # range=['#29b5e8', '#155F7A']),  # 31333F
                           range=chart_color),
                       legend=None),
-  ).properties(width=130, height=130)
+  ).properties(width=140, height=140)
     
   text = plot.mark_text(align='center', color="#29b5e8", font="Lato", fontSize=32, fontWeight=700, fontStyle="italic").encode(text=alt.value(f'{input_response} %'))
   plot_bg = alt.Chart(source_bg).mark_arc(innerRadius=45, cornerRadius=20).encode(
@@ -164,7 +164,7 @@ def make_donut(input_response, input_text, input_color):
                           domain=[input_text, ''],
                           range=chart_color),  # 31333F
                       legend=None),
-  ).properties(width=130, height=130)
+  ).properties(width=140, height=140)
   return plot_bg + plot + text
 
 # Convert population to text 
@@ -233,7 +233,7 @@ with col[0]:
         donut_chart_greater = make_donut(states_migration_greater, 'Inbound Migration', 'green')
         donut_chart_less = make_donut(states_migration_less, 'Outbound Migration', 'red')
 
-    states_migration_col = st.tabs(['Inbound', 'Outbound'])
+    states_migration_col = st.tabs(['Inbound', 'Outbound', 'Inbound+Outbound'])
     with states_migration_col[0]:
         st.altair_chart(donut_chart_greater)
     with states_migration_col[1]:
