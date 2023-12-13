@@ -75,7 +75,7 @@ df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
 with st.sidebar:
     st.title('🏂 US Population Dashboard')
     
-    year_list = list(df_reshaped.year.unique())
+    year_list = list(df_reshaped.year.unique()).reverse()
     
     selected_year = st.selectbox('Select a year', year_list, index=len(year_list)-1)
     df_selected_year = df_reshaped[df_reshaped.year == selected_year]
