@@ -218,7 +218,7 @@ with col[0]:
     # Filter states with population difference > 50000
     # df_greater_50000 = df_population_difference_sorted[df_population_difference_sorted.population_difference_absolute > 50000]
     df_greater_50000 = df_population_difference_sorted[df_population_difference_sorted.population_difference > 50000]
-    df_less_50000 = df_population_difference_sorted[df_population_difference_sorted.population_difference < 50000]
+    df_less_50000 = df_population_difference_sorted[df_population_difference_sorted.population_difference < -50000]
     # % of States with population difference > 50000
     states_migration_greater = int((len(df_greater_50000)/df_population_difference_sorted.states.nunique())*100)
     states_migration_less = int((len(df_less_50000)/df_population_difference_sorted.states.nunique())*100)
