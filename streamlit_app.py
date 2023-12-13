@@ -62,9 +62,11 @@ st.markdown("""
 }
 
 [data-testid="stArrowVegaLiteChart"] {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    left: 38%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 </style>
