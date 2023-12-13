@@ -61,14 +61,6 @@ st.markdown("""
     transform: translateX(-50%);
 }
 
-[data-testid="stArrowVegaLiteChart"] {
-    position: relative;
-    left: 38%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-
 </style>
 """, unsafe_allow_html=True)
 
