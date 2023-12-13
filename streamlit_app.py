@@ -153,7 +153,7 @@ def make_donut(input_response, input_text, input_color):
                           # range=['#29b5e8', '#155F7A']),  # 31333F
                           range=chart_color),
                       legend=None),
-  ).properties(width=140, height=150)
+  ).properties(width=140, height=140)
     
   text = plot.mark_text(align='center', color="#29b5e8", font="Lato", fontSize=34, fontWeight=700, fontStyle="italic").encode(text=alt.value(f'{input_response} %'))
   plot_bg = alt.Chart(source_bg).mark_arc(innerRadius=50, cornerRadius=20).encode(
@@ -164,7 +164,7 @@ def make_donut(input_response, input_text, input_color):
                           domain=[input_text, ''],
                           range=chart_color),  # 31333F
                       legend=None),
-  ).properties(width=140, height=150)
+  ).properties(width=140, height=140)
   return plot_bg + plot + text
 
 # Convert population to text 
