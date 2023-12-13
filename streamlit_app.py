@@ -232,8 +232,11 @@ with col[0]:
         states_migration_less = 0
         donut_chart_greater = make_donut(states_migration_greater, 'Inbound Migration', 'green')
         donut_chart_less = make_donut(states_migration_less, 'Outbound Migration', 'red')
-        
+
+    st.write('Inbound migration')
     st.altair_chart(donut_chart_greater)
+
+    st.write('Outbound migration')
     st.altair_chart(donut_chart_less)
 
 
