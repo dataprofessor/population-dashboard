@@ -235,10 +235,8 @@ with col[0]:
 
     states_migration_col = st.tabs(['Inbound', 'Outbound'])
     with states_migration_col[0]:
-        st.write('Inbound')
         st.altair_chart(donut_chart_greater)
     with states_migration_col[1]:
-        st.write('Outbound')
         st.altair_chart(donut_chart_less)
 
 with col[1]:
