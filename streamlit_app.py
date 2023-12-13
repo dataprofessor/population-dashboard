@@ -268,7 +268,7 @@ with col[2]:
                      )}
                  )
     
-    with st.expander('About'):
+    with st.expander('About', expanded=True):
         st.write('''
             - Data obtained from the [U.S. Census Bureau](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html).
             - :orange[**Gains/Losses**] refers to states with high inbound and outbound migration in the selected year
