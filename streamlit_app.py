@@ -28,6 +28,11 @@ st.markdown("""
     margin-bottom: -7rem;
 }
 
+[data-testid="stVerticalBlock"] {
+    padding-left: -2rem;
+    padding-right: -2rem;
+}
+
 [data-testid="stMetric"] {
     background-color: #393939;
     text-align: center;
