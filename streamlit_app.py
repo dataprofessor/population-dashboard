@@ -5,15 +5,15 @@ import pandas as pd
 import altair as alt
 import plotly.express as px
 
-#######################
-# Page configuration
-st.set_page_config(
-    page_title="US Population Dashboard",
-    page_icon="🏂",
-    layout="wide",
-    initial_sidebar_state="expanded")
+st.set_page_config(page_title="US Population Insights", page_icon="🗺️", layout="wide")
 
-alt.themes.enable("dark")
+st.title("US Population Insights")
+st.caption("Customized by Saifuzzaman Tanim")
+
+
+
+
+alt.theme.enable("dark")
 
 #######################
 # CSS styling
@@ -69,11 +69,39 @@ st.markdown("""
 # Load data
 df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
 
+# ---- Add Census regions ----
+state_to_region = {
+    # Northeast
+    "Maine":"Northeast","New Hampshire":"Northeast","Vermont":"Northeast","Massachusetts":"Northeast",
+    "Rhode Island":"Northeast","Connecticut":"Northeast","New York":"Northeast","New Jersey":"Northeast",
+    "Pennsylvania":"Northeast",
+
+    # Midwest
+    "Ohio":"Midwest","Indiana":"Midwest","Illinois":"Midwest","Michigan":"Midwest","Wisconsin":"Midwest",
+    "Minnesota":"Midwest","Iowa":"Midwest","Missouri":"Midwest","North Dakota":"Midwest","South Dakota":"Midwest",
+    "Nebraska":"Midwest","Kansas":"Midwest",
+
+    # South
+    "Delaware":"South","Maryland":"South","District of Columbia":"South","Virginia":"South","West Virginia":"South",
+    "North Carolina":"South","South Carolina":"South","Georgia":"South","Florida":"South",
+    "Kentucky":"South","Tennessee":"South","Alabama":"South","Mississippi":"South",
+    "Arkansas":"South","Louisiana":"South","Oklahoma":"South","Texas":"South",
+
+    # West
+    "Montana":"West","Idaho":"West","Wyoming":"West","Colorado":"West","New Mexico":"West",
+    "Arizona":"West","Utah":"West","Nevada":"West",
+    "Washington":"West","Oregon":"West","California":"West","Alaska":"West","Hawaii":"West",
+}
+
+df_reshaped["region"] = df_reshaped["states"].map(state_to_region).fillna("Other")
+
+
 
 #######################
 # Sidebar
 with st.sidebar:
-    st.title('🏂 US Population Dashboard')
+    st.title("📊 My Population Dashboard")
+    st.write("Explore US population trends (2010–2019)")
     
     year_list = list(df_reshaped.year.unique())[::-1]
     
@@ -83,6 +111,7 @@ with st.sidebar:
 
     color_theme_list = ['blues', 'cividis', 'greens', 'inferno', 'magma', 'plasma', 'reds', 'rainbow', 'turbo', 'viridis']
     selected_color_theme = st.selectbox('Select a color theme', color_theme_list)
+    
 
 
 #######################
@@ -105,6 +134,7 @@ def make_heatmap(input_df, input_y, input_x, input_color, input_color_theme):
         ) 
     # height=300
     return heatmap
+
 
 # Choropleth map
 def make_choropleth(input_df, input_id, input_column, input_color_theme):
@@ -248,25 +278,116 @@ with col[1]:
     heatmap = make_heatmap(df_reshaped, 'year', 'states', 'population', selected_color_theme)
     st.altair_chart(heatmap, use_container_width=True)
     
+    st.markdown("#### Compare States Over Time")
+    state_options = sorted(df_reshaped["states"].unique())
+    selected_states = st.multiselect("Pick states to compare", state_options, default=["California", "Texas"])
+
+    if selected_states:
+        df_compare = df_reshaped[df_reshaped["states"].isin(selected_states)]
+        line_chart = (
+            alt.Chart(df_compare)
+            .mark_line(point=True)
+            .encode(
+                x="year:O",
+                y="population:Q",
+                color="states:N"
+            )
+            .properties(height=300)
+        )
+        st.altair_chart(line_chart, use_container_width=True)
+
+        csv = df_compare.to_csv(index=False).encode("utf-8")
+        st.download_button(
+            "Download Selected States Data",
+            data=csv,
+            file_name="state_comparison.csv",
+            mime="text/csv",
+        )
+
+    # -------- Regional Aggregates --------
+    st.markdown("#### Regional Population Trends (2010–2019)")
+
+    # Map states to Census regions (local so you don't need to edit elsewhere)
+    state_to_region = {
+        # Northeast
+        "Maine":"Northeast","New Hampshire":"Northeast","Vermont":"Northeast","Massachusetts":"Northeast",
+        "Rhode Island":"Northeast","Connecticut":"Northeast","New York":"Northeast","New Jersey":"Northeast",
+        "Pennsylvania":"Northeast",
+        # Midwest
+        "Ohio":"Midwest","Indiana":"Midwest","Illinois":"Midwest","Michigan":"Midwest","Wisconsin":"Midwest",
+        "Minnesota":"Midwest","Iowa":"Midwest","Missouri":"Midwest","North Dakota":"Midwest","South Dakota":"Midwest",
+        "Nebraska":"Midwest","Kansas":"Midwest",
+        # South
+        "Delaware":"South","Maryland":"South","District of Columbia":"South","Virginia":"South","West Virginia":"South",
+        "North Carolina":"South","South Carolina":"South","Georgia":"South","Florida":"South",
+        "Kentucky":"South","Tennessee":"South","Alabama":"South","Mississippi":"South",
+        "Arkansas":"South","Louisiana":"South","Oklahoma":"South","Texas":"South",
+        # West
+        "Montana":"West","Idaho":"West","Wyoming":"West","Colorado":"West","New Mexico":"West",
+        "Arizona":"West","Utah":"West","Nevada":"West",
+        "Washington":"West","Oregon":"West","California":"West","Alaska":"West","Hawaii":"West",
+    }
+
+    df_with_region = df_reshaped.assign(region=df_reshaped["states"].map(state_to_region).fillna("Other"))
+    df_region = df_with_region.groupby(["year", "region"], as_index=False)["population"].sum()
+
+    # Line chart by region
+    region_chart = (
+        alt.Chart(df_region)
+        .mark_line(point=True)
+        .encode(
+            x="year:O",
+            y="population:Q",
+            color="region:N"
+        )
+        .properties(height=320)
+    )
+    st.altair_chart(region_chart, use_container_width=True)
+
+    # Stacked area chart to show each region's share over time
+    st.markdown("#### Regional Share of U.S. Population")
+    area_chart = (
+        alt.Chart(df_region)
+        .mark_area(opacity=0.7)
+        .encode(
+            x="year:O",
+            y="population:Q",
+            color="region:N"
+        )
+        .properties(height=280)
+    )
+    st.altair_chart(area_chart, use_container_width=True)
+
+    # Table for the selected year
+    st.markdown(f"#### Regions in {selected_year}")
+    df_region_year = (
+        df_region[df_region["year"] == selected_year]
+        .sort_values("population", ascending=False)
+        .rename(columns={"region": "Region", "population": "Population"})
+        .reset_index(drop=True)
+    )
+    st.dataframe(df_region_year, use_container_width=True)
+
+
 
 with col[2]:
     st.markdown('#### Top States')
 
-    st.dataframe(df_selected_year_sorted,
-                 column_order=("states", "population"),
-                 hide_index=True,
-                 width=None,
-                 column_config={
-                    "states": st.column_config.TextColumn(
-                        "States",
-                    ),
-                    "population": st.column_config.ProgressColumn(
-                        "Population",
-                        format="%f",
-                        min_value=0,
-                        max_value=max(df_selected_year_sorted.population),
-                     )}
-                 )
+    st.dataframe(
+        df_selected_year_sorted,
+        column_order=("states", "population"),
+        hide_index=True,
+        use_container_width=True,   # ✅ replaces width=None
+        column_config={
+            "states": st.column_config.TextColumn("States"),
+            "population": st.column_config.ProgressColumn(
+                "Population",
+                format="%f",
+                min_value=0,
+                max_value=max(df_selected_year_sorted.population),
+            ),
+        },
+    )
     
     with st.expander('About', expanded=True):
         st.write('''
