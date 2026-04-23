@@ -252,21 +252,21 @@ with col[1]:
 with col[2]:
     st.markdown('#### Top States')
 
-    st.dataframe(df_selected_year_sorted,
-                 column_order=("states", "population"),
-                 hide_index=True,
-                 width=None,
-                 column_config={
-                    "states": st.column_config.TextColumn(
-                        "States",
-                    ),
-                    "population": st.column_config.ProgressColumn(
-                        "Population",
-                        format="%f",
-                        min_value=0,
-                        max_value=max(df_selected_year_sorted.population),
-                     )}
-                 )
+    st.dataframe(
+    df_selected_year_sorted,
+    column_order=("states", "population"),
+    hide_index=True,
+    use_container_width=True,
+    column_config={
+        "states": st.column_config.TextColumn("States"),
+        "population": st.column_config.ProgressColumn(
+            "Population",
+            format="%f",
+            min_value=0,
+            max_value=max(df_selected_year_sorted.population),
+        ),
+    },
+)
     
     with st.expander('About', expanded=True):
         st.write('''
